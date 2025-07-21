@@ -29,7 +29,6 @@ describe("TaskListingPage", () => {
         <TaskListingPage />
       </QueryClientProvider>
     );
-    // Use getByRole for comboboxes (MUI Select)
     expect(screen.getByRole('combobox', { name: /Status/i })).toBeInTheDocument();
     expect(screen.getByRole('combobox', { name: /Assigned To/i })).toBeInTheDocument();
   });
@@ -41,7 +40,6 @@ describe("TaskListingPage", () => {
       </QueryClientProvider>
     );
     fireEvent.click(screen.getByRole('button', { name: /Create Task/i }));
-    // Modal title is a heading
     expect(await screen.findByRole('heading', { name: /Create Task/i })).toBeInTheDocument();
   });
 });

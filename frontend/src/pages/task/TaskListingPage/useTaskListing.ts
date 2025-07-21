@@ -50,7 +50,6 @@ export function useTaskListing() {
     }, 300);
   };
 
-  // Delete mutation
   const deleteTaskMutation = useMutation({
     mutationFn: (id: string) => deleteTask(id),
     onSuccess: () => {

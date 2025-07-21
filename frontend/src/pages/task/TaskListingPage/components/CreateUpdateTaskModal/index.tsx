@@ -35,7 +35,6 @@ export default function CreateUpdateTaskModal(props: TaskFormModalProps) {
     readOnly: hookReadOnly,
   } = useTaskFormModal({ selectedTask, readOnly, onSuccess, onClose });
 
-  // Config for form fields
   type FieldKey = "title" | "description";
   const fields: Array<{
     key: FieldKey;

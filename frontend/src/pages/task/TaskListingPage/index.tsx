@@ -118,7 +118,6 @@ export default function TaskListingPage() {
     },
   ];
 
-  // handleModalClose is now provided by useTaskListing
   return (
     <Box
       sx={{
