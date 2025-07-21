@@ -1,6 +1,6 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import { Document } from "mongoose";
-import { User as UserEntity } from "../../../entities/user.entity";
+import { User as UserEntity } from "../../entities/user.entity";
 
 @Schema({ timestamps: true })
 export class User extends Document implements UserEntity {
