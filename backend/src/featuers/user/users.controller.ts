@@ -7,7 +7,7 @@ export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
   @Post()
-  async create(@Body() dto: CreateUserCommand) {
+  async create(@Body() dto: CreateUserCommand[]) {
     return {
       data: await this.usersService.createMany(dto),
       message: "SUCCESS",

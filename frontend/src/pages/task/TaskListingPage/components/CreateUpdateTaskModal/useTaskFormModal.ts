@@ -39,7 +39,7 @@ export function useTaskFormModal({ selectedTask, readOnly = false, onSuccess, on
       setInitialValues({
         title: selectedTask.title,
         description: selectedTask.description,
-        assignedTo: selectedTask?.assignedTo?._id || "",
+        assignedTo: selectedTask.assignedTo || "",
         status: selectedTask.status,
       });
     } else {
@@ -58,6 +58,7 @@ export function useTaskFormModal({ selectedTask, readOnly = false, onSuccess, on
         ? updateTask(selectedTask?._id, values)
         : createTask(values),
     onSuccess: () => {
+      formik.resetForm();
       onSuccess?.();
       onClose();
     },

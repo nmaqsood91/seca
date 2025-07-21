@@ -1,11 +1,9 @@
-import { User } from "./user";
-
 export interface Task {
   _id: string;
   title: string;
   description: string;
   status: "OPEN" | "INPROGRESS" | "DONE";
-  assignedTo?: User;
+  assignedTo?: string;
   createdAt: string;
   updatedAt: string;
 }

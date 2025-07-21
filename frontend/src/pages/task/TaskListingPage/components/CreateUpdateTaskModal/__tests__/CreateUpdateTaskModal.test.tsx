@@ -7,13 +7,11 @@ import * as usersService from "../../../../../../services/users.service";
 
 jest.mock("../../../../../../services/users.service");
 
-// ✅ Mock data
 const mockUsers: User[] = [
   { _id: "u1", name: "John", email: "john@example.com" },
   { _id: "u2", name: "Jane", email: "jane@example.com" },
 ];
 
-// ✅ Mock getUsers to resolve with mockUsers
 (usersService.getUsers as jest.Mock).mockResolvedValue(mockUsers);
 
 const queryClient = new QueryClient();
@@ -44,7 +42,7 @@ describe("CreateUpdateTaskModal", () => {
       title: "Test Task",
       description: "Test Desc",
       status: "INPROGRESS",
-      assignedTo: mockUsers[0],
+      assignedTo: mockUsers[0]._id,
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     };
@@ -60,7 +58,7 @@ describe("CreateUpdateTaskModal", () => {
       title: "Read-only Task",
       description: "Read-only Desc",
       status: "DONE",
-      assignedTo: mockUsers[1],
+      assignedTo: mockUsers[1]._id,
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     };

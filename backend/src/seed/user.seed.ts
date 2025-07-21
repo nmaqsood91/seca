@@ -1,5 +1,5 @@
 import { UsersService } from "../featuers/user/users.service";
-import { CreateUserDto } from "../featuers/user/commands/create-user.command";
+import { CreateUserCommand } from "../featuers/user/commands/create-user.command";
 import { faker } from "@faker-js/faker";
 
 export async function seedUsers(usersService: UsersService) {
@@ -9,7 +9,7 @@ export async function seedUsers(usersService: UsersService) {
     return;
   }
 
-  const seedData: CreateUserDto[] = Array.from({ length: 5 }, () => ({
+  const seedData: CreateUserCommand[] = Array.from({ length: 5 }, () => ({
     name: faker.person.fullName(),
     email: faker.internet.email(),
   }));
